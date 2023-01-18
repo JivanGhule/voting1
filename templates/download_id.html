@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block data %}
+
+<div class="container mt-3">
+      
+    <div class="row">
+        <h2 class="bg-warning text-light" align="center">Download Voter Id Card</h2>
+        <div class="col-md-3"></div>
+        <div class="col-md-6">
+            <form action="" method="post">
+                {% csrf_token %}
+                <div class="mb-3 mt-3">
+                    <label for="name"><b>Name:</b></label>
+                    <input type="text" class="form-control" id="name" placeholder="Enter your name" name="name" required>
+                </div>
+                <div class="mb-3 mt-3">
+                    <label for="adhar_number"><b>Adhar Number:</b></label>
+                    <input type="number" class="form-control" id="adhar_number" placeholder="Enter your Adhar Number" name="adhar_number" required>
+                </div>
+                <div class="mb-3 mt-3" align="center">
+                    <button type="submit" class="btn btn-success">Download</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+</div>
+
+{% endblock data %}

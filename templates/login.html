@@ -1,0 +1,72 @@
+{% extends "base.html" %}
+
+{% block data %}
+<!-- <div class="container mt-2">
+    <h2 align="center" class="bg-warning text-light mt-2">Login</h2>
+    <div class="row">
+        <div class="col-md-3"></div>
+        <div class="col-md-6 bg-danger my-2" id="form_reg">
+
+            <form action="" method="post">
+                {% csrf_token %}
+                <label for="full_name"><b>full_name</b></label><br>
+                <input type="text" name="full_name" id="full_name" size="40%" required><br>
+
+                <label for="adhar_number"><b>adhar_number</b></label><br>
+                <input type="number" name="adhar_number" id="adhar_number" size="40%" required><br>
+                <p class="text-danger">* Please Enter 12 Digit Adhar Number</p>
+
+                <input type="submit" value="submit" class="my-2"><br>
+            </form>
+
+        </div>
+    </div>
+</div> -->
+
+
+
+
+<div class="container mt-3">
+    <div class="row">
+        <div class="col-md-3"></div>
+        <div class="col-md-6 bg-success p-2" id="form_login">
+            <h2 align="center" class="bg-warning">Login</h2><hr>
+
+            {% if msg2 %}
+                <div class="alert alert-success alert-dismissible">
+                <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                <strong>{{ msg2 }}!</strong>
+                </div>
+            {% endif %}
+            
+            <!-- <h6 class="text-light">Note Down This UID: {{ UID }}</h6> -->
+            <form action="" method="post" autocomplete="off">
+            {% csrf_token %}
+            <div class="mb-3 mt-3">
+                <label for="full_name"><b>full_name</b></label><br>
+                <input type="text" class="form-control" id="name" placeholder="Enter your name" name="name" required>
+            </div>
+
+            <div class="mb-3">
+                <label for="adhar_number"><b>adhar_number</b></label><br>
+                <input type="number" class="form-control" id="adhar_number" placeholder="Enter Adhar Number" name="adhar_number" required>
+            </div>
+
+            <div class="mb-3 mt-3">
+                <label for="UID"><b>Unique Id</b></label><br>
+                <input type="text" class="form-control" id="UID" placeholder="Enter your UID" name="UID" required>
+            </div>
+        
+            <div class="m-auto" align="center">
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
+            
+            </form>
+        </div>
+    </div>
+</div>
+  
+
+
+{% endblock %}
+

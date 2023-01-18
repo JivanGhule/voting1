@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+
+{% block data %}
+
+{% if dt %}
+<div class="container mt-3">
+    <h5 class="bg-success p-1">Edge : {{ Edge }}</h5>
+    <h5 class="bg-warning p-1">Firefox : {{ Firefox }}</h5>
+    <h5 class="bg-danger p-1">Chrome : {{ Chrome }}</h5>
+    <h5 class="bg-info p-1">Opera : {{ Opera }}</h5>
+    <h5 class="bg-warning p-1">Safari : {{ Safari }}</h5>
+  </div>
+
+  <div class="container mt-3">
+      <div class="row">
+        <div class="col-md-5 m-auto">
+          <h4 class="bg-danger p-2">Winner Total Votes: <b class="text-light">{{ win }} Votes</b></h4>
+        </div>
+  
+        <div class="col-md-2 m-auto">
+          <img src="https://www.nicepng.com/png/detail/169-1699078_winner-clipart.png" alt="img" width="100%" height="100px" align="center">
+        </div>
+          <div class="col-md-5 m-auto">
+          {% for i in l %}
+            <h5 class="bg-success p-2">Winner : <b class="text-light">{{ i }} 🥳🎉🎊✨</b></h5>
+          {% endfor %}
+        </div>
+      </div>
+  </div>
+  
+{% else %}
+
+<div>
+  <h5 class="bg-danger">Result Not Declared</h5>
+</div>
+
+{% endif %}
+
+{% endblock %}

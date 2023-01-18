@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+
+{% block data %}
+<div class="container mt-2">
+    <div class="row">
+        <div class="col-md-3"></div>
+        <div class="col-md-6 bg-warning my-2" id="form_reg">
+            <h2 align="center" class="bg-success text-light mt-2">User Registration Form</h2>
+
+            {% if msg1 or msg2 %}
+                <div class="alert alert-success alert-dismissible">
+                <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                <strong>{{ msg1 }}!</strong>
+                </div>
+            {% endif %}
+
+            <form action="" method="post">
+                {% csrf_token %}
+
+                <div class="mb-3 mt-3">
+                    <label for="full_name"><b>full_name</b></label><br>
+                    <input type="text" class="form-control" id="name" placeholder="Enter your name" name="name" required>
+                </div>
+    
+                <div class="mb-3">
+                    <label for="adhar_number"><b>adhar_number</b></label><br>
+                    <input type="number" class="form-control" id="adhar_number" placeholder="Enter Adhar Number" name="adhar_number" required>
+                </div>
+    
+                <div class="mb-3 mt-3">
+                    <label for="mobile_number"><b>mobile_number</b></label><br>
+                    <input type="tel" class="form-control" id="mobile_number" placeholder="Enter your mobile_number" name="mobile_number" required>
+                </div>
+
+                <div class="mb-3 mt-3">
+                    <label for="address"><b>Address</b></label><br>
+                    <input type="text" class="form-control" id="address" placeholder="Enter your Address" name="address" required>
+                </div>
+    
+                <div class="mb-3">
+                    <label for="age"><b>Age</b></label><br>
+                    <input type="number" class="form-control" id="age" placeholder="Enter your Age" name="age" required>
+                </div>
+            
+                <div class="m-auto my-1" align="center">
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </div>
+
+            </form>
+
+
+
+        </div>
+    </div>
+</div>
+
+{% endblock %}
